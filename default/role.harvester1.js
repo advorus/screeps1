@@ -5,13 +5,13 @@ var roleHarvester1 = {
             (structure.structureType == STRUCTURE_EXTENSION || structure.structureType == STRUCTURE_CONTAINER)
             && structure.energy < structure.energyCapacity)}});
 
-          if(creep.memory.filling && creep.carry.enery == 0){
+          if(creep.memory.filling && creep.carry.energy == 0){
             creep.memory.filling = false;
           }
           if(!creep.memory.filling && creep.carry.energy == creep.carryCapacity) {
             creep.memory.filling = true;
           }
-          
+
           if(creep.memory.filling){
             if(Game.spawns['Spawn1'].energy<Game.spawns['Spawn1'].energyCapacity){
                 if(creep.transfer(Game.spawns['Spawn1'], RESOURCE_ENERGY) == ERR_NOT_IN_RANGE){
