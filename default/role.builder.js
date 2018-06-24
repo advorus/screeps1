@@ -1,9 +1,6 @@
 var roleBuilder = {
   run: function(creep){
-    var extensions = _.filter(creep.room.find(FIND_SOURCES), {
-      filter: function(object)
-        {return object.structureType == STRUCTURE_EXTENSION}
-      });
+    var extensions = creep.room.find(FIND_STRUCTURES, {filter: (structure) => {return (structure.structureType == STRUCTURE_EXTENSION)}});
 
 	    if(creep.memory.building && creep.carry.energy == 0) {
             creep.memory.building = false;
