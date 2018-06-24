@@ -33,7 +33,6 @@ var roleHarvester1 = {
           }
         }
       }
-    }
-  };
+    };
 
 module.exports = roleHarvester1;
