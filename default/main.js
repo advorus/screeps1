@@ -7,8 +7,8 @@ module.exports.loop = function () {
     }
   }
 
-  var HarvestCount = var harvesters = _.filter(Game.creeps, (creep) => creep.memory.role == 'harvester');
-
+  var HarvestCount = _.filter(Game.creeps, (creep) => creep.memory.role == 'harvester');
+  
   if(HarvestCount<3){
     Game.spawns['Spawn1'].spawnCreep([MOVE,WORK,CARRY], 'Harvester'+Game.time, {memory: {role: 'harvester'}});
   }
