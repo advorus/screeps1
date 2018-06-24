@@ -1,4 +1,4 @@
-var roleHarvester0 = {
+var roleHarvester1 = {
   run: function(creep) {
         var source = creep.room.find(FIND_SOURCES);
         var extensions = _.filter(creep.room.find(FIND_SOURCES), {
@@ -8,8 +8,8 @@ var roleHarvester0 = {
 
         if(Game.spawns['Spawn1'].energy < Game.spawns['Spawn1'].energyCapacity){
           if(creep.carry.energy<creep.carryCapacity){
-              if(creep.harvest(source[0]) == ERR_NOT_IN_RANGE){
-                  creep.moveTo(source[0], {visualizePathStyle: {stroke: '#ffaa00'}});
+              if(creep.harvest(source[1]) == ERR_NOT_IN_RANGE){
+                  creep.moveTo(source[1], {visualizePathStyle: {stroke: '#ffaa00'}});
               }
           }
           else{
@@ -26,4 +26,4 @@ var roleHarvester0 = {
     }
   };
 
-module.exports = roleHarvester0;
+module.exports = roleHarvester1;
