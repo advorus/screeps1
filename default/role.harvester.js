@@ -6,7 +6,7 @@ var roleHarvester0 = {
             {return object.structureType == STRUCTURE_EXTENSION && object.energy<object.energyCapacity}
           });
 
-        if(creep.room.energyAvailable < 550){
+        if(creep.room.energyAvailable < creep.room.energyCapacityAvailable){
           if(creep.carry.energy<creep.carryCapacity){
               if(creep.harvest(source[0]) == ERR_NOT_IN_RANGE){
                   creep.moveTo(source[0], {visualizePathStyle: {stroke: '#ffaa00'}});
