@@ -45,6 +45,3 @@ module.exports.loop = function () {
       }
   }
 }
-module.exports = harvestCount;
-module.exports = upgraderCount;
-module.exports = builderCount;
