@@ -15,8 +15,6 @@ module.exports.loop = function () {
   var upgraderCount = _.filter(Game.creeps, (creep) => creep.memory.role == 'upgrader');
   var builderCount = _.filter(Game.creeps, (creep)=>creep.memory.role == 'builder');
 
-  console.log(harvestCount);
-
   //Spawn in new creeps
   if(harvestCount.length<3){
     Game.spawns['Spawn1'].spawnCreep([MOVE,WORK,CARRY,WORK], 'Harvester'+Game.time, {memory: {role: 'harvester'}});
