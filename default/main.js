@@ -28,11 +28,11 @@ module.exports.loop = function () {
   }
 
   if(upgraderCount.length<1){
-    Game.spawns['Spawn1'].spawnCreep([MOVE,WORK,CARRY,WORK,WORK,CARRY], 'Upgrader'+Game.time, {memory: {role: 'upgrader'}});
+    Game.spawns['Spawn1'].spawnCreep([MOVE,WORK,CARRY,WORK,CARRY], 'Upgrader'+Game.time, {memory: {role: 'upgrader'}});
   }
 
   if(builderCount.length<1){
-    Game.spawns['Spawn1'].spawnCreep([MOVE,WORK,CARRY,WORK,WORK,CARRY], 'Builder'+Game.time, {memory: {role: 'builder'}});
+    Game.spawns['Spawn1'].spawnCreep([MOVE,WORK,CARRY,WORK,CARRY], 'Builder'+Game.time, {memory: {role: 'builder'}});
   }
 
 
