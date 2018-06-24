@@ -32,7 +32,7 @@ var roleBuilder = {
             }
 	    }
 	    else {
-            if(Game.spawns['Spawn1'].transfer(creep, RESOURCE_ENERGY)) == ERR_NOT_IN_RANGE) {
+            if(Game.spawns['Spawn1'].transfer(creep, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
                 creep.moveTo(Game.spawns['Spawn1'], {visualizePathStyle: {stroke: '#ffaa00'}});
             }
 	    }
