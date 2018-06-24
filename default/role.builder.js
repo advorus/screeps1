@@ -34,12 +34,6 @@ var roleBuilder = {
             }
 	    }
 	    else {
-            var source = creep.room.find(FIND_SOURCES);
-            var harvester0Count = _.filter(Game.creeps, (creep) => creep.memory.role == 'harvester0');
-            var harvester1Count = _.filter(Game.creeps, (creep) => creep.memory.role == 'harvester1');
-            var upgraderCount = _.filter(Game.creeps, (creep) => creep.memory.role == 'upgrader');
-            var builderCount = _.filter(Game.creeps, (creep)=>creep.memory.role == 'builder');
-
             if(creep.withdraw(extensions[1], RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
                 creep.moveTo(extensions[1], {visualizePathStyle: {stroke: '#ffaa00'}});
             }

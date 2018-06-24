@@ -9,11 +9,6 @@ var roleUpgrader = {
               }
           }
           else{
-            var harvester0Count = _.filter(Game.creeps, (creep) => creep.memory.role == 'harvester0');
-            var harvester1Count = _.filter(Game.creeps, (creep) => creep.memory.role == 'harvester1');
-            var upgraderCount = _.filter(Game.creeps, (creep) => creep.memory.role == 'upgrader');
-            var builderCount = _.filter(Game.creeps, (creep)=>creep.memory.role == 'builder');
-
             if(creep.withdraw(extensions[0], RESOURCE_ENERGY) == ERR_NOT_IN_RANGE){
               creep.moveTo(extensions[0], {visualizePathStyle: {stroke: '#ffaa00'}});
             }
