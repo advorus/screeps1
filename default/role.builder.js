@@ -8,10 +8,10 @@ var roleBuilder = {
 	    }
 
 	    if(creep.memory.building) {
-	        var constructionSite = creep.pos.findClosestByPath(FIND_CONSTRUCTION_SITES);
+	        var constructionSite = creep.room.find(FIND_CONSTRUCTION_SITES);
             if(constructionSite.length) {
-                if(creep.build(constructionSites) == ERR_NOT_IN_RANGE) {
-                    creep.moveTo(constructionSites, {visualizePathStyle: {stroke: '#ffffff'}});
+                if(creep.build(constructionSite[0]) == ERR_NOT_IN_RANGE) {
+                    creep.moveTo(constructionSite[0], {visualizePathStyle: {stroke: '#ffffff'}});
                 }
             }
             else{
