@@ -5,13 +5,17 @@ var roleHarvester0 = {
           (structure.structureType == STRUCTURE_EXTENSION || structure.structureType == STRUCTURE_CONTAINER)
           && structure.energy < structure.energyCapacity)}});
 
-        if(creep.room.energyAvailable < creep.room.energyCapacityAvailable){
-          if(creep.carry.energy<creep.carryCapacity){
-              if(creep.harvest(source[0]) == ERR_NOT_IN_RANGE){
-                  creep.moveTo(source[0], {visualizePathStyle: {stroke: '#ffaa00'}});
-              }
-          }
-          else if(Game.spawns['Spawn1'].energy<Game.spawns['Spawn1'].energyCapacity){
+        if(creep.memory.filling && creep.carry.enery == 0){
+          creep.memory.filling = false;
+        }
+        if(!creep.memory.filling && creep.carry.energy == creep.carryCapacity) {
+  	      creep.memory.filling = true;
+  	    }
+        if(creep.room.energyAvailable == creep.room.energyCapacityAvailable)){
+          creep.memory.filling = false;
+        }
+        if(creep.memory.filling){
+          if(Game.spawns['Spawn1'].energy<Game.spawns['Spawn1'].energyCapacity){
               if(creep.transfer(Game.spawns['Spawn1'], RESOURCE_ENERGY) == ERR_NOT_IN_RANGE){
                   creep.moveTo(Game.spawns['Spawn1'], {visualizePathStyle: {stroke: '#ffaa00'}})
               }
@@ -22,6 +26,11 @@ var roleHarvester0 = {
               creep.moveTo(creep.pos.findClosestByPath(extensions));
             }
           }
+      }
+      else{
+        if(creep.harvest(source[0]) == ERR_NOT_IN_RANGE){
+          creep.moveTo(source[0], {visualizePathStyle: {stroke: '#ffaa00'}});
+        }
       }
     }
   };
