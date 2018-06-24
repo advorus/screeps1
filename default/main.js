@@ -18,15 +18,15 @@ module.exports.loop = function () {
 
   //Spawn in new creeps
   if(harvestCount<3){
-    Game.spawns['Spawn1'].spawnCreep([MOVE,WORK,CARRY], 'Harvester'+Game.time, {memory: {role: 'harvester'}});
+    Game.spawns['Spawn1'].spawnCreep([MOVE,WORK,CARRY,WORK], 'Harvester'+Game.time, {memory: {role: 'harvester'}});
   }
 
   if(upgraderCount<1){
-    Game.spawns['Spawn1'].spawnCreep([MOVE,WORK,CARRY], 'Upgrader'+Game.time, {memory: {role: 'upgrader'}});
+    Game.spawns['Spawn1'].spawnCreep([MOVE,WORK,CARRY,WORK], 'Upgrader'+Game.time, {memory: {role: 'upgrader'}});
   }
 
   if(builderCount<2){
-    Game.spawns['Spawn1'].spawnCreep([MOVE,WORK,CARRY], 'Builder'+Game.time, {memory: {role: 'builder'}});
+    Game.spawns['Spawn1'].spawnCreep([MOVE,WORK,CARRY,WORK], 'Builder'+Game.time, {memory: {role: 'builder'}});
   }
 
 
