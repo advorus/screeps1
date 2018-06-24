@@ -1,7 +1,9 @@
 var roleHarvester0 = {
   run: function(creep) {
         var source = creep.room.find(FIND_SOURCES);
-        var extensions = creep.room.find(FIND_STRUCTURES, {filter: (structure) => {return (structure.structureType == STRUCTURE_EXTENSION && structure.energy < structure.energyCapacity)}});
+        var extensions = creep.room.find(FIND_STRUCTURES, {filter: (structure) => {return (
+          (structure.structureType == STRUCTURE_EXTENSION || structure.structureType == STRUCTURE_CONTAINER)
+          && structure.energy < structure.energyCapacity)}});
 
         if(creep.room.energyAvailable < creep.room.energyCapacityAvailable){
           if(creep.carry.energy<creep.carryCapacity){
