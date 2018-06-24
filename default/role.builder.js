@@ -17,7 +17,7 @@ var roleBuilder = {
             else{
               var repair = creep.pos.findClosestByPath(FIND_STRUCTURES, {
                 filter: function(object){
-                  if(object.hits < object.hitsMax){
+                  if(object.hits < 200000){
                     return true;
                   }
                   else{
