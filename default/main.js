@@ -13,7 +13,7 @@ module.exports.loop = function () {
   if(harvestCount<3){
     Game.spawns['Spawn1'].spawnCreep([MOVE,WORK,CARRY], 'Harvester'+Game.time, {memory: {role: 'harvester'}});
   }
-  if(upgraderCount<3){
+  if(upgraderCount<1){
     Game.spawns['Spawn1'].spawnCreep([MOVE,WORK,CARRY], 'Upgrader'+Game.time, {memory: {role: 'upgrader'}});
   }
 
