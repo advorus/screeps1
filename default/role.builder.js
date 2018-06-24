@@ -8,11 +8,27 @@ var roleBuilder = {
 	    }
 
 	    if(creep.memory.building) {
-	        var targets = creep.room.find(FIND_CONSTRUCTION_SITES);
-            if(targets.length) {
-                if(creep.build(targets[0]) == ERR_NOT_IN_RANGE) {
-                    creep.moveTo(targets[0], {visualizePathStyle: {stroke: '#ffffff'}});
+	        var constructionSite = creep.pos.findClosestByPath(FIND_CONSTRUCTION_SITES);
+            if(constructionSite.length) {
+                if(creep.build(constructionSites) == ERR_NOT_IN_RANGE) {
+                    creep.moveTo(constructionSites, {visualizePathStyle: {stroke: '#ffffff'}});
                 }
+            }
+            else{
+              var repair = creep.pos.findClosestByPath(FIND_STRUCTURES, {
+                filter: function(object){
+                  if(object.hits < object.hitsMax){
+                    return true;
+                  }
+                  else{
+                    return false;
+                  }
+                }
+              })
+
+              if(creep.repair(repair)==ERR_NOT_IN_RANGE){
+                  creep.moveTo(repair, {visualizePathStyle: {stroke: '#ffffff'}});
+              }
             }
 	    }
 	    else {
