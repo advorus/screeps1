@@ -31,7 +31,7 @@ module.exports.loop = function () {
     Game.spawns['Spawn1'].spawnCreep([MOVE,WORK,CARRY,WORK], 'Upgrader'+Game.time, {memory: {role: 'upgrader'}});
   }
 
-  if(builderCount.length<2){
+  if(builderCount.length<1){
     Game.spawns['Spawn1'].spawnCreep([MOVE,WORK,CARRY,WORK], 'Builder'+Game.time, {memory: {role: 'builder'}});
   }
 

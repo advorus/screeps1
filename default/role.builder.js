@@ -38,7 +38,7 @@ var roleBuilder = {
             var upgraderCount = _.filter(Game.creeps, (creep) => creep.memory.role == 'upgrader');
             var builderCount = _.filter(Game.creeps, (creep)=>creep.memory.role == 'builder');
 
-            if(harvester0Count.length>=3 && upgraderCount.length>=1 && builderCount.length>=2 && harvester1Count.length>=1){
+            if(harvester0Count.length>=3 && upgraderCount.length>=1 && builderCount.length>=1 && harvester1Count.length>=1){
             if(creep.withdraw(Game.spawns['Spawn1'], RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
                 creep.moveTo(Game.spawns['Spawn1'], {visualizePathStyle: {stroke: '#ffaa00'}});
             }
