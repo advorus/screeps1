@@ -15,12 +15,13 @@ var roleHarvester1 = {
                     creep.moveTo(Game.spawns['Spawn1'], {visualizePathStyle: {stroke: '#ffaa00'}})
                 }
           }
-        }
-        else{
-          if(creep.transfer(extensions[0], RESOURCE_ENERGY)==ERR_NOT_IN_RANGE){
-            creep.moveTo(extensions[0]);
+
+          else{
+            if(creep.transfer(extensions[0], RESOURCE_ENERGY)==ERR_NOT_IN_RANGE){
+              creep.moveTo(extensions[0]);
+            }
           }
-        }
+      }
     }
   };
 
