@@ -11,7 +11,7 @@ var roleHarvester0 = {
         if(!creep.memory.filling && creep.carry.energy == creep.carryCapacity) {
   	      creep.memory.filling = true;
   	    }
-        if(creep.room.energyAvailable == creep.room.energyCapacityAvailable){
+        if(creep.room.energyAvailable == creep.room.energyCapacityAvailable && creep.carry.energy>0){
           creep.memory.filling = false;
         }
         if(creep.memory.filling){
