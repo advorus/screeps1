@@ -21,7 +21,7 @@ var roleHarvester1 = {
           }
         }
         else{
-          if(creep.transfer(extensions[0])==ERR_NOT_IN_RANGE){
+          if(creep.transfer(extensions[0], RESOURCE_ENERGY)==ERR_NOT_IN_RANGE){
             creep.moveTo(extensions[0]);
           }
         }
