@@ -33,9 +33,11 @@ var roleBuilder = {
 	    }
 	    else {
             var source = creep.room.find(FIND_SOURCES);
+            if(harvestCount.length>=3 && upgraderCount.length>=1 && builderCount.length>=2){
             if(creep.withdraw(Game.spawns['Spawn1'], RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
                 creep.moveTo(Game.spawns['Spawn1'], {visualizePathStyle: {stroke: '#ffaa00'}});
             }
+          }
 	    }
 	}
 };
