@@ -4,7 +4,7 @@ var roleHarvester1 = {
           var extensions = creep.room.find(FIND_STRUCTURES, {filter: (structure) => {return (
             (structure.structureType == STRUCTURE_EXTENSION)
             && structure.energy < structure.energyCapacity)}});
-          var containers = creep.room.find(FIND_STRUCTURES, {filter: {filter: (structure) => {return (
+          var containers = creep.room.find(FIND_STRUCTURES, {filter: (structure) => {return (
             structure.structureType == STRUCTURE_CONTAINER
             && structure.energy < structure.energyCapacity)}});
 
