@@ -6,7 +6,7 @@ var roleHarvester1 = {
             && structure.energy < structure.energyCapacity)}});
           var containers = creep.room.find(FIND_STRUCTURES, {filter: (structure) => {return (
             structure.structureType == STRUCTURE_CONTAINER
-            && structure.store.RESOURCE_ENERGY < structure.storeCapacity)}});
+            && structure.store[RESOURCE_ENERGY] < structure.storeCapacity)}});
 
           if(creep.memory.filling && creep.carry.energy == 0){
             creep.memory.filling = false;
