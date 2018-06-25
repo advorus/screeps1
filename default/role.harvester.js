@@ -28,6 +28,7 @@ var roleHarvester0 = {
         }
       }
       else {
+        console.log(containers)
         if(creep.transfer(creep.pos.findClosestByPath(containers), RESOURCE_ENERGY)==ERR_NOT_IN_RANGE){
           creep.moveTo(creep.pos.findClosestByPath(containers));
         }
