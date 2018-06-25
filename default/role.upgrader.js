@@ -1,7 +1,7 @@
 var roleUpgrader = {
   run: function(creep) {
         var source = creep.room.find(FIND_SOURCES);
-        var containers = creep.room.find(FIND_STRUCTURES, {filter: (structure) => {return (structure.structureType == STRUCTURE_CONTAINER && structure.energy>0)}});
+        var containers = creep.room.find(FIND_STRUCTURES, {filter: (structure) => {return (structure.structureType == STRUCTURE_CONTAINER && structure.store[RESOURCE_ENERGY]>0)}});
 
           if(creep.carry.energy > 0){
               if(creep.upgradeController(creep.room.controller) == ERR_NOT_IN_RANGE){
@@ -14,7 +14,7 @@ var roleUpgrader = {
                 creep.moveTo(containers[0], {visualizePathStyle: {stroke: '#ffaa00'}});
               }
             }
-          
+
     }
   };
 
