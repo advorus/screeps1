@@ -18,7 +18,7 @@ var roleBuilder = {
                   }
               }
               else{
-                var repair = creep.pos.findClosestByPath(FIND_STRUCTURES, {
+                var repair = creep.room.find(FIND_STRUCTURES, {
                   filter: function(object){
                     if(object.hits < 200000){
                       return true;
@@ -29,8 +29,8 @@ var roleBuilder = {
                   }
                 })
 
-                if(creep.repair(repair)==ERR_NOT_IN_RANGE){
-                    creep.moveTo(repair, {visualizePathStyle: {stroke: '#ffffff'}});
+                if(creep.repair(repair[0])==ERR_NOT_IN_RANGE){
+                    creep.moveTo(repair[0], {visualizePathStyle: {stroke: '#ffffff'}});
                 }
               }
   	    }
