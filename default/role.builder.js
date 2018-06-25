@@ -20,7 +20,7 @@ var roleBuilder = {
               else{
                 var repair = creep.room.find(FIND_STRUCTURES, {
                   filter: function(object){
-                    if(object.hits < 200000){
+                    if(object.hits < 150000){
                       return true;
                     }
                     else{
