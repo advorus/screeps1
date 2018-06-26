@@ -47,9 +47,9 @@ var roleBuilder = {
                   creep.moveTo(containers[0], {visualizePathStyle: {stroke: '#ffaa00'}});
               }
           }
-          else if(extensions.length && harvesterCount>=1){
-            if(creep.withdraw(extensions[0], RESOURCE_ENERGY) == ERR_NOT_IN_RANGE){
-              creep.moveTo(extensions[0], {visualizePathStyle: {stroke: '#ffffff'}})
+          else if(Game.spawns['Spawn1'].energy>0 && harvesterCount>1){
+            if(creep.withdraw(Game.spawns['Spawn1'], RESOURCE_ENERGY) == ERR_NOT_IN_RANGE){
+              creep.moveTo(Game.spawns['Spawn1'], {visualizePathStyle: {stroke: '#ffffff'}})
             }
           }
           else{
