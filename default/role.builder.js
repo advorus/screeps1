@@ -1,7 +1,10 @@
+var creepNumber = require('creep.number')
+
 var roleBuilder = {
   run: function(creep){
     if(creep.room.controller.ticksToDowngrade>500){
       var containers = creep.room.find(FIND_STRUCTURES, {filter: (structure) => {return (structure.structureType == STRUCTURE_CONTAINER && structure.store[RESOURCE_ENERGY]>0)}});
+      var extensions = creep.room.find(FIND_STRUCTURES, {filter: (structure) => {return (structure.structureType == STRUCTURE_EXTENSION && structure.store[RESOURCE_ENERGY]>0)}});
 
   	    if(creep.memory.building && creep.carry.energy == 0) {
               creep.memory.building = false;
@@ -35,9 +38,16 @@ var roleBuilder = {
               }
   	    }
   	    else {
+          if(containers.length){
               if(creep.withdraw(containers[0], RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
                   creep.moveTo(containers[0], {visualizePathStyle: {stroke: '#ffaa00'}});
               }
+          }
+          else if(extensions.length && creepNumber.run()){
+              if(creep.withdraw(extensions[0], RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
+                  creep.moveTo(extensions[0], {visualizePathStyle: {stroke: '#ffaa00'}});
+              }
+          }
         }
 
       }
