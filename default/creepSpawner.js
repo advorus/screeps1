@@ -13,7 +13,7 @@ var creepSpawner = {
   spawn: function(){
 
     //Spawn in new creeps
-    if(harvester0Count<3){
+    if(harvester0Count<1){
       Game.spawns['Spawn1'].spawnCreep([MOVE,WORK,CARRY,WORK,WORK,CARRY,WORK], '0Harvester'+Game.time, {memory: {role: 'harvester0'}});
     }
 
