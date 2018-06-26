@@ -4,7 +4,7 @@ var roleBuilder = {
   run: function(creep){
     if(creep.room.controller.ticksToDowngrade>500){
       var containers = creep.room.find(FIND_STRUCTURES, {filter: (structure) => {return (structure.structureType == STRUCTURE_CONTAINER && structure.store[RESOURCE_ENERGY]>0)}});
-      var extensions = creep.room.find(FIND_STRUCTURES, {filter: (structure) => {return (structure.structureType == STRUCTURE_EXTENSION && structure.store[RESOURCE_ENERGY]>0)}});
+      //var extensions = creep.room.find(FIND_STRUCTURES, {filter: (structure) => {return (structure.structureType == STRUCTURE_EXTENSION && structure.store[RESOURCE_ENERGY]>0)}});
 
   	    if(creep.memory.building && creep.carry.energy == 0) {
               creep.memory.building = false;
