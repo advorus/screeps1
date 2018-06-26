@@ -15,7 +15,7 @@ var roleUpgrader = {
               }
             }
             else{
-              if(creep.harvest(source[0]==ERR_NOT_IN_RANGE){
+              if(creep.harvest(source[0])==ERR_NOT_IN_RANGE){
                 creep.moveTo(source[0]);
               }
             }
