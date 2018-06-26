@@ -1,13 +1,10 @@
 //Count the number of each type of creep
-var sources = Game.spawns['Spawn1'].room.find(FIND_SOURCES)
-
-for(i=0; i<sources.length; i++){
-  var (harvester + i + List) = _.filter(Game.creeps, (creep) => creep.memory.role == 'harvester'+i);
-  var (harvester + i + Count) = (harvester + i + List).length
-}
-
+var harvester0List = _.filter(Game.creeps, (creep) => creep.memory.role == 'harvester0');
+var harvester1List = _.filter(Game.creeps, (creep) => creep.memory.role == 'harvester1');
 var upgraderList = _.filter(Game.creeps, (creep) => creep.memory.role == 'upgrader');
 var builderList = _.filter(Game.creeps, (creep)=>creep.memory.role == 'builder');
+var harvester0Count = harvester0List.length;
+var harvester1Count = harvester1List.length;
 var upgraderCount = upgraderList.length;
 var builderCount = builderList.length;
 
