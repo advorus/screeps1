@@ -1,7 +1,7 @@
 //Count the number of each type of creep
 var sources = Game.spawns['Spawn1'].room.find(FIND_SOURCES)
 
-for(i=0, i<sources.length, i++){
+for(i=0; i<sources.length; i++){
   var (harvester + i + List) = _.filter(Game.creeps, (creep) => creep.memory.role == 'harvester'+i);
   var (harvester + i + Count) = (harvester + i + List).length
 }
