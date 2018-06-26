@@ -34,10 +34,27 @@ var roleBuilder = {
                       return false;
                     }
                   }
-                })
+                });
+                var containerRepair = creep.room.find(FIND_STRUCTURES, {
+                  filter: function(object){
+                    if(object.hits < object.hitsMax && object.structureType == STRUCTURE_CONTAINER){
+                      return true;
+                    }
+                    else{
+                      return false;
+                    }
+                  }
+                });
 
-                if(creep.repair(repair[0])==ERR_NOT_IN_RANGE){
-                    creep.moveTo(repair[0], {visualizePathStyle: {stroke: '#ffffff'}});
+                if(containerRepair.length){
+                  if(creep.repair(containerRepair[0])==ERR_NOT_IN_RANGE){
+                      creep.moveTo(containerRepair[0], {visualizePathStyle: {stroke: '#ffffff'}});
+                  }
+                }
+                else{
+                  if(creep.repair(repair[0])==ERR_NOT_IN_RANGE){
+                      creep.moveTo(repair[0], {visualizePathStyle: {stroke: '#ffffff'}});
+                  }
                 }
               }
   	    }
