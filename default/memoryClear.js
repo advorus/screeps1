@@ -8,4 +8,4 @@ var memoryClear = {
   }
 }
 
-module.exports = memoryClear';
+module.exports = memoryClear;
