@@ -4,7 +4,7 @@ var harvester1Count = require('creepSpawner');
 
 var roleBuilder = {
   run: function(creep){
-    if(creep.room.controller.ticksToDowngrade>500){
+    if(creep.room.controller.ticksToDowngrade>2000){
       var containers = creep.room.find(FIND_STRUCTURES, {filter: (structure) => {return (structure.structureType == STRUCTURE_CONTAINER && structure.store[RESOURCE_ENERGY]>0)}});
       var extensions = creep.room.find(FIND_STRUCTURES, {filter: (structure) => {return (structure.structureType == STRUCTURE_EXTENSION && structure.energy>0)}});
       var harvesterCount = harvester0Count+harvester1Count;
