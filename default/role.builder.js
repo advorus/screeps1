@@ -5,6 +5,7 @@ var harvester1Count = require('creepSpawner');
 var roleBuilder = {
   run: function(creep){
     if(creep.room.controller.ticksToDowngrade>2000){
+      var source = creep.room.find(FIND_SOURCES);
       var containers = creep.room.find(FIND_STRUCTURES, {filter: (structure) => {return (structure.structureType == STRUCTURE_CONTAINER && structure.store[RESOURCE_ENERGY]>0)}});
       var extensions = creep.room.find(FIND_STRUCTURES, {filter: (structure) => {return (structure.structureType == STRUCTURE_EXTENSION && structure.energy>0)}});
       var harvesterCount = harvester0Count+harvester1Count;
@@ -49,6 +50,11 @@ var roleBuilder = {
           else if(extensions.length && harvesterCount>=1){
             if(creep.withdraw(extensions[0], RESOURCE_ENERGY) == ERR_NOT_IN_RANGE){
               creep.moveTo(extensions[0], {visualizePathStyle: {stroke: '#ffffff'}})
+            }
+          }
+          else{
+            if(creep.harvest(source[0])==ERR_NOT_IN_RANGE){
+              creep.moveTo(source[0]);
             }
           }
         }
