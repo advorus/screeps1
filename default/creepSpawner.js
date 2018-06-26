@@ -26,4 +26,4 @@ var creepSpawner = {
   }
 }
 
-module.exports = creepSpawner;
+module.exports = creepSpawner, harvester0Count, harvester1Count, builderCount, upgraderCount;
