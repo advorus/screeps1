@@ -16,7 +16,7 @@ var roleUpgrader = {
                 creep.moveTo(containers[0], {visualizePathStyle: {stroke: '#ffaa00'}});
               }
             }
-            else if(extensions.length && harvesterCount>=1){
+            else if(extensions.length && harvesterCount.length>=1){
               if(creep.withdraw(extensions[0], RESOURCE_ENERGY) == ERR_NOT_IN_RANGE){
                 creep.moveTo(extensions[0], {visualizePathStyle: {stroke: '#ffffff'}})
               }
