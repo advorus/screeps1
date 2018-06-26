@@ -1,4 +1,4 @@
-var creepNumber = require('creep.number')
+//var creepNumber = require('creep.number')
 
 var roleBuilder = {
   run: function(creep){
@@ -43,11 +43,11 @@ var roleBuilder = {
                   creep.moveTo(containers[0], {visualizePathStyle: {stroke: '#ffaa00'}});
               }
           }
-          else if(extensions.length && creepNumber.run()){
-              if(creep.withdraw(extensions[0], RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
-                  creep.moveTo(extensions[0], {visualizePathStyle: {stroke: '#ffaa00'}});
-              }
-          }
+          //else if(extensions.length && creepNumber.run()){
+            //  if(creep.withdraw(extensions[0], RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
+              //    creep.moveTo(extensions[0], {visualizePathStyle: {stroke: '#ffaa00'}});
+              //}
+          //}
         }
 
       }
